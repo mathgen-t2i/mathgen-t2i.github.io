@@ -36,97 +36,70 @@
 
     a { color: var(--blue); }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(10px);
-    }
-
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 56px;
-      gap: 1rem;
-    }
-
-    .brand {
-      color: var(--ink);
-      font-family: "Google Sans", sans-serif;
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: 0;
-    }
-
-    .navlinks {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 0.7rem;
-      font-family: "Google Sans", sans-serif;
-      font-size: 0.92rem;
-      font-weight: 600;
-    }
-
-    .navlinks a { color: #394554; }
-
     .hero {
-      padding: 3.7rem 1.5rem 1.5rem;
-      background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
+      padding: 2.6rem 1.5rem 1.2rem;
+      background: #fff;
     }
 
     .publication-title {
       color: var(--ink);
       font-family: "Google Sans", sans-serif;
-      font-size: clamp(3.3rem, 10vw, 6.9rem);
+      font-size: clamp(2.5rem, 6vw, 4.4rem);
       font-weight: 800;
       letter-spacing: 0;
-      line-height: 0.95;
-      margin-bottom: 0.75rem;
+      line-height: 1;
+      margin-bottom: 0.5rem;
     }
 
     .publication-subtitle {
-      max-width: 980px;
+      max-width: 900px;
       margin: 0 auto;
       color: #263241;
       font-family: "Castoro", Georgia, serif;
-      font-size: clamp(1.35rem, 3.4vw, 2.25rem);
-      line-height: 1.22;
+      font-size: clamp(1.18rem, 2.4vw, 1.75rem);
+      line-height: 1.28;
     }
 
     .authors {
-      max-width: 1060px;
-      margin: 1.35rem auto 0;
+      max-width: 1010px;
+      margin: 1.1rem auto 0;
       color: #394554;
-      font-size: 1.02rem;
-      line-height: 1.75;
+      font-size: 1rem;
+      line-height: 1.7;
     }
 
-    .affiliations {
-      max-width: 1080px;
-      margin: 0.7rem auto 0;
+    .authors a {
+      color: #3273dc;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .authors a:hover {
+      color: #1d4ed8;
+    }
+
+    .author-note {
+      margin-top: 0.45rem;
       color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.65;
+      font-size: 0.92rem;
+      line-height: 1.5;
     }
 
     .button-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.55rem;
-      margin-top: 1.4rem;
+      gap: 0.5rem;
+      margin-top: 1.1rem;
     }
 
     .paper-button {
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      min-height: 40px;
-      padding: 0.52rem 0.95rem;
+      min-height: 38px;
+      padding: 0.46rem 0.9rem;
       border: 1px solid #202a36;
       border-radius: 999px;
       background: #202a36;
@@ -154,8 +127,8 @@
     }
 
     .teaser {
-      padding: 1rem 1.5rem 3rem;
-      background: #f8fafc;
+      padding: 1rem 1.5rem 2.6rem;
+      background: #fff;
     }
 
     .figure-wrap {
@@ -455,21 +428,11 @@
         grid-template-columns: 1fr;
       }
 
-      .topbar { position: static; }
-
-      .topbar-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        padding-top: 0.7rem;
-        padding-bottom: 0.7rem;
-      }
-
-      .navlinks { justify-content: flex-start; }
     }
 
     @media (max-width: 640px) {
-      .hero { padding-top: 2.4rem; }
-      .publication-title { font-size: 3.4rem; }
+      .hero { padding-top: 2rem; }
+      .publication-title { font-size: 2.7rem; }
       .news-item {
         grid-template-columns: 1fr;
         gap: 0.2rem;
@@ -479,37 +442,32 @@
 </head>
 
 <body>
-  <nav class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="#top">MathGen</a>
-      <div class="navlinks">
-        <a href="#news">News</a>
-        <a href="#introduction">Introduction</a>
-        <a href="#benchmark">Benchmark</a>
-        <a href="#leaderboard">Leaderboard</a>
-        <a href="#analysis">Analysis</a>
-        <a href="#bibtex">BibTeX</a>
-      </div>
-    </div>
-  </nav>
-
   <header class="hero" id="top">
     <div class="container has-text-centered">
       <h1 class="publication-title">MathGen</h1>
       <h2 class="publication-subtitle">Revealing the Illusion of Mathematical Competence through Text-to-Image Generation</h2>
 
       <div class="authors">
-        Ruiyao Liu<sup>*</sup>, Hui Shen<sup>*</sup>, Ping Zhang<sup>*</sup>, Yunta Hsieh,
-        Yifan Zhang, Jing Xu, Qi Han, Junchen Li, Jiawei Lu, Jianing Ma, Jiaqi Mo,
-        Sicheng Chen, Zhen Zhang, Zhongwei Wan, Jing Xiong, Xin Wang, Ziyuan Liu,
-        Hangrui Cao, Ngai Wong<sup>&dagger;</sup>
-      </div>
-
-      <div class="affiliations">
-        <sup>*</sup>Co-first authors. <sup>&dagger;</sup>Corresponding author.<br>
-        University of Pennsylvania, University of Michigan, The Ohio State University, USTC,
-        City University of Hong Kong, University of Wisconsin, Independent, UCSB,
-        University of Hong Kong, Peking University, Carnegie Mellon University
+        <a href="https://Liuruiyao.github.io/">Ruiyao Liu</a><sup>*</sup>,
+        <a href="https://killthefullmoon.github.io/">Hui Shen</a><sup>*</sup>,
+        <a href="https://pizhn.github.io/">Ping Zhang</a><sup>*</sup>,
+        <a href="https://scholar.google.com/citations?user=X45ixKAAAAAJ&hl=zh-TW">Yunta Hsieh</a>,
+        <a href="https://github.com/zyfzs0">Yifan Zhang</a>,
+        <a href="https://github.com/jeong2712">Jing Xu</a>,
+        <a href="https://scholar.google.com/citations?user=E_2WQWEAAAAJ&hl=zh-CN">Qi Han</a>,
+        <a href="https://github.com/jli279172-svg">Junchen Li</a>,
+        <a href="https://github.com/JW1u">Jiawei Lu</a>,
+        <a href="https://github.com/CoderMaurice">Jianing Ma</a>,
+        <a href="https://github.com/jmo25">Jiaqi Mo</a>,
+        <a href="https://github.com/sichengchen">Sicheng Chen</a>,
+        <a href="https://namezhenzhang.github.io/">Zhen Zhang</a>,
+        <a href="https://scholar.google.com/citations?user=EVj1cNoAAAAJ&hl=en">Zhongwei Wan</a>,
+        <a href="https://scholar.google.com/citations?user=dFX1hXkAAAAJ&hl=en">Jing Xiong</a>,
+        <a href="https://scholar.google.com/citations?user=Q7yOQTMAAAAJ&hl=en">Xin Wang</a>,
+        <a href="#">Ziyuan Liu</a>,
+        <a href="https://diegocao.github.io/">Hangrui Cao</a>,
+        <a href="https://www.eee.hku.hk/~nwong/">Ngai Wong</a><sup>&dagger;</sup>
+        <div class="author-note"><sup>*</sup>Co-first authors. <sup>&dagger;</sup>Corresponding author.</div>
       </div>
 
       <div class="button-row">
