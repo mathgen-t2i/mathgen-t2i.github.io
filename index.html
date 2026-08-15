@@ -138,6 +138,10 @@
       background: #fff;
     }
 
+    .teaser-figure {
+      max-width: 840px;
+    }
+
     .figure-caption {
       margin-top: 0.75rem;
       color: var(--muted);
@@ -175,33 +179,6 @@
       font-size: 1.04rem;
       line-height: 1.82;
       text-align: justify;
-    }
-
-    .news-box {
-      max-width: 960px;
-      margin: 0 auto;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fff;
-      overflow: hidden;
-    }
-
-    .news-item {
-      display: grid;
-      grid-template-columns: 128px 1fr;
-      gap: 1rem;
-      padding: 0.95rem 1rem;
-      border-bottom: 1px solid #edf1f5;
-      color: #394554;
-      line-height: 1.65;
-    }
-
-    .news-item:last-child { border-bottom: 0; }
-
-    .news-date {
-      color: var(--red);
-      font-family: "Google Sans", sans-serif;
-      font-weight: 800;
     }
 
     .metric-grid,
@@ -426,10 +403,6 @@
     @media (max-width: 640px) {
       .hero { padding-top: 2rem; }
       .publication-title { font-size: 2.25rem; }
-      .news-item {
-        grid-template-columns: 1fr;
-        gap: 0.2rem;
-      }
     }
   </style>
 </head>
@@ -480,28 +453,12 @@
   </header>
 
   <section class="teaser">
-    <div class="figure-wrap">
+    <div class="figure-wrap teaser-figure">
       <img src="./webimg/7domains.png" alt="MathGen covers seven mathematical domains with representative prompts and reference illustrations.">
       <p class="figure-caption">
         MathGen spans counting, angles, fractions, functions, plane geometry, sets, and solid geometry.
         Each problem asks a text-to-image model to render a visually valid mathematical structure, not merely a plausible-looking picture.
       </p>
-    </div>
-  </section>
-
-  <section class="section is-soft" id="news">
-    <div class="container">
-      <h2 class="section-title">News</h2>
-      <div class="news-box">
-        <div class="news-item">
-          <div class="news-date">2026.08</div>
-          <div>Project page updated with the latest MathGen benchmark design, results, and qualitative analysis.</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026</div>
-          <div>MathGen introduces deterministic Script-as-a-Judge evaluation for mathematical text-to-image generation.</div>
-        </div>
-      </div>
     </div>
   </section>
 
