@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" type="image/png" href="./favicon.png">
 
   <style>
     :root {
@@ -42,6 +43,10 @@
     }
 
     .publication-title {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
       color: var(--ink);
       font-family: "Google Sans", sans-serif;
       font-size: clamp(2.05rem, 5vw, 3.35rem);
@@ -49,6 +54,13 @@
       letter-spacing: 0;
       line-height: 1;
       margin-bottom: 0.5rem;
+    }
+
+    .title-icon {
+      width: clamp(2.25rem, 5vw, 3.4rem);
+      height: clamp(2.25rem, 5vw, 3.4rem);
+      object-fit: contain;
+      flex: 0 0 auto;
     }
 
     .publication-subtitle {
@@ -403,6 +415,10 @@
     @media (max-width: 640px) {
       .hero { padding-top: 2rem; }
       .publication-title { font-size: 2.25rem; }
+      .title-icon {
+        width: 2.25rem;
+        height: 2.25rem;
+      }
     }
   </style>
 </head>
@@ -410,7 +426,7 @@
 <body>
   <header class="hero" id="top">
     <div class="container has-text-centered">
-      <h1 class="publication-title">MathGen</h1>
+      <h1 class="publication-title"><img class="title-icon" src="./webimg/icon.png" alt="">MathGen</h1>
       <h2 class="publication-subtitle">Revealing the Illusion of Mathematical Competence through Text-to-Image Generation</h2>
 
       <div class="authors">
